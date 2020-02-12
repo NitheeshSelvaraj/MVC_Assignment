@@ -15,7 +15,6 @@ namespace WebApplication3
             //    url: "Sam/{action}",
             //    defaults: new { controller = "Maximum", action = "Index", id = UrlParameter.Optional }
             //);
-
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
