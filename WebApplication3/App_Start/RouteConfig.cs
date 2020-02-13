@@ -15,6 +15,13 @@ namespace WebApplication3
             //    url: "Sam/{action}",
             //    defaults: new { controller = "Maximum", action = "Index", id = UrlParameter.Optional }
             //);
+
+            routes.MapRoute(
+                name: "Employee",
+                url: "Sample/Details",
+                defaults: new { controller = "Sample", action = "ViewEmployee", id = UrlParameter.Optional }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

@@ -1,0 +1,32 @@
+﻿@model MVCDemo.Entity.Employee
+@{
+    ViewBag.Title = "ViewEmployee";
+}
+
+<h2>ViewEmployee</h2>
+<table border="1">
+    <tr>
+        <td>
+            Employee Id
+        </td>
+        <td>
+            Employee Name
+        </td>
+    </tr>
+    @foreach (MVCDemo.Entity.Employee item in (IEnumerable<MVCDemo.Entity.Employee>)ViewData["Details"])
+    {
+        
+            <tr>
+                <td>
+                    @item.empId
+
+                </td>
+                <td>
+                    @item.empName
+                </td>
+
+            </tr>
+        
+    }
+</table>
+

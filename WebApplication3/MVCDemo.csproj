@@ -134,7 +134,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\MaximumController.cs" />
     <Compile Include="Controllers\SampleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -155,7 +154,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Sample\Demo.cshtml" />
-    <Content Include="Views\Maximum\Index.cshtml" />
+    <Content Include="Views\Sample\ViewEmployee.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -166,6 +165,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVCDemo.DAL\MVCDemo.DAL.csproj">
+      <Project>{8d974c01-9483-43d2-9924-cb5b5537b96e}</Project>
+      <Name>MVCDemo.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVCDemo.Entity\MVCDemo.Entity.csproj">
+      <Project>{ae4342e7-951f-4f43-8c07-1c391a045775}</Project>
+      <Name>MVCDemo.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
