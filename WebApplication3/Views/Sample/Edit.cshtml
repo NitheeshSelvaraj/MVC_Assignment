@@ -1,0 +1,38 @@
+﻿@model MVCDemo.Entity.Employee
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Update", "Sample", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.empId);
+    <table>
+        <tr>
+            <td>
+                Employee Name
+            </td>
+            <td>
+                @Html.EditorFor(model=>model.empName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Role
+            </td>
+            <td>
+                @Html.EditorFor(model => model.role)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Cancel","ViewEmployee")
+            </td>
+            <td>
+                <input type="submit" id="Submit" />
+            </td>
+        </tr>
+    </table>
+}

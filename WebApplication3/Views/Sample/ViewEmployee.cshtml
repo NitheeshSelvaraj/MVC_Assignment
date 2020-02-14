@@ -4,16 +4,24 @@
 }
 
 <h2>ViewEmployee</h2>
+@Html.ActionLink("Add New Employee","AddEmployee")<br />
+
 <table border="1">
     <tr>
-        <td>
+        <th>
             Employee Id
-        </td>
-        <td>
+        </th>
+        <th>
             Employee Name
-        </td>
+        </th>
+        <th>
+            Role
+        </th>
+        <th>
+            Action
+        </th>
     </tr>
-    @foreach (MVCDemo.Entity.Employee item in (IEnumerable<MVCDemo.Entity.Employee>)ViewData["Details"])
+    @foreach (MVCDemo.Entity.Employee item in (IEnumerable<MVCDemo.Entity.Employee>)TempData["Details"])
     {
         
             <tr>
@@ -24,7 +32,13 @@
                 <td>
                     @item.empName
                 </td>
-
+                <td>
+                    @item.role
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.empId})|
+                    @Html.ActionLink("Delete", "Delete", new { id=item.empId})
+                </td>
             </tr>
         
     }

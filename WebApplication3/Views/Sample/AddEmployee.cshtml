@@ -1,0 +1,46 @@
+﻿@model MVCDemo.Entity.Employee
+
+@{
+    ViewBag.Title = "AddEmployee";
+}
+
+<h2>AddEmployee</h2>
+
+@using (Html.BeginForm("AddEmployee", "Sample", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(Model=>Model.empId)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model=>Model.empId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model=>Model.empName)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model=>Model.empName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.role)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.role)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Back to the Details","ViewEmployee")
+            </td>
+            <td>
+                <input type="submit" id="Submit" />
+            </td>
+        </tr>
+    </table>
+}
+

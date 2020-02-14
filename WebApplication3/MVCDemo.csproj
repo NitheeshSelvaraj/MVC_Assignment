@@ -155,6 +155,8 @@
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Sample\Demo.cshtml" />
     <Content Include="Views\Sample\ViewEmployee.cshtml" />
+    <Content Include="Views\Sample\AddEmployee.cshtml" />
+    <Content Include="Views\Sample\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

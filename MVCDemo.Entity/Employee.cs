@@ -10,5 +10,6 @@ namespace MVCDemo.Entity
     {
         public int empId { get; set; }
         public string empName{get; set;}
+        public string role { get; set; }
     }
 }
