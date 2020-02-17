@@ -29,21 +29,38 @@ namespace WebApplication3.Controllers
             TempData["Details"] = employeeDetails;
             return View();
         }
-        public ActionResult AddEmployee()
+        [HttpGet]
+        [ActionName("AddEmployee")]
+        public ActionResult AddEmployee_get()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult AddEmployee(Employee employee)
+        [ActionName("AddEmployee")]
+        public ActionResult AddEmployee_post()
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
+                Employee employee = new Employee();
+                UpdateModel<Employee>(employee);
                 employeeRepository.Add(employee);
                 TempData["Details"] = "Employee Added";
                 return RedirectToAction("ViewEmployee");
             }
-            return View(employee);
+            return View();
         }
+        //public ActionResult AddEmployee_post()
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        Employee employee = new Employee();
+        //        TryUpdateModel<Employee>(employee);
+        //        employeeRepository.Add(employee);
+        //        TempData["Details"] = "Employee Added";
+        //        return RedirectToAction("ViewEmployee");
+        //    }
+        //    return View();
+        //}
         [HttpGet]
         public ActionResult Edit(int id)
         {
